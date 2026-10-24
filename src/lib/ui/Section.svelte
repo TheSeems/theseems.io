@@ -4,7 +4,7 @@
 
 <section
   {id}
-  class="scroll-mt-28 py-12 sm:scroll-mt-32 sm:py-16 lg:py-20 {className}"
+  class="scroll-mt-28 py-10 sm:scroll-mt-32 sm:py-14 lg:py-16 {className}"
 >
   {@render children?.()}
 </section>

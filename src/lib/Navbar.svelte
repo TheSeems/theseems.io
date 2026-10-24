@@ -5,7 +5,7 @@
   import ThemeToggle from "./ThemeToggle.svelte";
   import IconCv from "./icons/IconCv.svelte";
   import { activeSectionId } from "./activeSection.svelte.js";
-  import { sections } from "./sections.js";
+  import { navSections } from "./sections.js";
   import { trackEvent } from "./metrics.js";
 
   let menuOpen = $state(false);
@@ -56,7 +56,7 @@
     </a>
 
     <nav class="hidden items-center gap-2 md:flex" aria-label="Primary">
-      {#each sections as s (s.id)}
+      {#each navSections as s (s.id)}
         <NavbarItem href={`#${s.id}`}>{s.label}</NavbarItem>
       {/each}
       <ThemeToggle />
@@ -137,7 +137,7 @@
       class="border-t border-zinc-200/60 bg-zinc-50/95 px-5 py-4 backdrop-blur-xl dark:border-zinc-800/70 dark:bg-zinc-950/95 md:hidden"
     >
       <div class="flex flex-col gap-1">
-        {#each sections as s (s.id)}
+        {#each navSections as s (s.id)}
           <a
             href={`#${s.id}`}
             class="rounded-xl px-4 py-3 text-sm font-medium no-underline {activeSectionId.value ===
