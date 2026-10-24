@@ -9,7 +9,7 @@ export default [
   ...svelte.configs.recommended,
   {
     languageOptions: {
-      globals: { ...globals.browser },
+      globals: { ...globals.browser, __BUILD_YEAR__: "readonly" },
     },
   },
   {

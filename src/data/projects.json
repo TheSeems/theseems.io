@@ -28,6 +28,15 @@
     "iconMono": true
   },
   {
+    "pinned": true,
+    "year": 2026,
+    "title": "Modrinthium",
+    "url": "https://github.com/theseems/modrinthium",
+    "tags": ["Vue", "Rust", "Minecraft launcher"],
+    "description": "A de-branded, telemetry-free fork of the Modrinth App: no analytics, ads, or account requirement, plus modpack installs and auto-updates straight from a hosted manifest URL.",
+    "icon": "modrinthium.png"
+  },
+  {
     "year": 2023,
     "title": "PacketPray",
     "url": "https://github.com/theseems/PacketPray",
@@ -47,14 +56,6 @@
     "url": "https://github.com/theseems/stoatium",
     "tags": ["PowerShell", "Electron"],
     "description": "A debranded, self-host-configurable build of the Stoat chat client — what VSCodium is to VS Code. Maintained as a patch series over pinned upstream tags instead of a vendored fork."
-  },
-  {
-    "year": 2026,
-    "title": "Modrinthium",
-    "url": "https://github.com/theseems/modrinthium",
-    "tags": ["Vue", "Rust", "Minecraft launcher"],
-    "description": "A de-branded, telemetry-free fork of the Modrinth App: no analytics, ads, or account requirement, plus modpack installs and auto-updates straight from a hosted manifest URL.",
-    "icon": "modrinthium.png"
   },
   {
     "year": 2021,

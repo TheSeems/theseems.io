@@ -51,7 +51,7 @@
       }}
     >
       <span class="text-base font-semibold tracking-tight text-zinc-900 dark:text-zinc-50"
-        >Alexey Akhundov</span
+        >Aleksei Akhundov</span
       >
     </a>
 
@@ -60,10 +60,12 @@
         <NavbarItem href={`#${s.id}`}>{s.label}</NavbarItem>
       {/each}
       <ThemeToggle />
+      <!-- Inert while collapsed, so keyboard focus can't land on the invisible button. -->
       <div
         class="grid transition-[grid-template-columns,opacity] duration-300 {pastHero
           ? 'grid-cols-[1fr] opacity-100'
           : 'grid-cols-[0fr] opacity-0'}"
+        inert={!pastHero}
       >
         <div class="overflow-hidden">
           <Button
@@ -142,6 +144,7 @@
             s.id
               ? 'bg-zinc-900 text-white dark:bg-white dark:text-zinc-950'
               : 'text-zinc-700 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-900'}"
+            aria-current={activeSectionId.value === s.id ? "location" : undefined}
             onclick={() => trackMobileNav(s.id)}>{s.label}</a
           >
         {/each}
