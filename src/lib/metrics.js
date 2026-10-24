@@ -1,7 +1,7 @@
 let outboundBound = false;
 
-/** Both domains serve this site; theseems.io is canonical (see the canonical tag in index.html). */
-const SITE_HOSTS = ["theseems.io", "theseems.ru"];
+/** Domains this site is served from (see the canonical tag in index.html). */
+const SITE_HOSTS = ["theseems.io"];
 
 function canonicalHost(hostname) {
   return hostname.replace(/^www\./i, "");

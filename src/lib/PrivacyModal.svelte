@@ -67,7 +67,7 @@
         </p>
 
         <p class="mt-4 text-pretty text-base leading-relaxed text-zinc-600 sm:text-lg dark:text-zinc-400">
-          Analytics data is processed on infrastructure in Russia,
+          Analytics data is processed on infrastructure in the EU,
           operated by the site owner. Questions? Reach out at
           <a
             class="font-mono font-medium text-sky-600 underline decoration-sky-600/30 underline-offset-[0.22em] transition-colors hover:text-sky-700 hover:decoration-sky-600/60 dark:text-sky-400 dark:decoration-sky-400/35 dark:hover:text-sky-300"
