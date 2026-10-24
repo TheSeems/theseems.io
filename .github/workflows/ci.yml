@@ -1,9 +1,9 @@
 name: CI
 
+# Runs only for main: on push, or by hand ("Run workflow"). Dispatches on other branches skip every job.
 on:
   push:
     branches: [main]
-  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -15,6 +15,7 @@ concurrency:
 
 jobs:
   check:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -38,11 +39,10 @@ jobs:
       - name: Build
         run: pnpm run build
 
-  # main only: publishes ghcr.io/theseems/theseems.io:main-<sha>-<unix time>; Flux picks up
-  # the newest tag and rolls it out.
+  # Publishes ghcr.io/theseems/theseems.io:main-<sha>-<unix time>; Flux picks up the newest tag
+  # and rolls it out. Skipped if check fails, so a broken commit never reaches the site.
   image:
     needs: check
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       contents: read

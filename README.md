@@ -16,7 +16,7 @@ Uses [pnpm](https://pnpm.io).
 
 Every push to `main` that passes CI is built into `ghcr.io/theseems/theseems.io` and rolled out
 by Flux. The `CI / deploy` check turns green once theseems.io serves that commit
-(`/version.json`). CI can also be started by hand from the Actions tab ("Run workflow").
+(`/version.json`). CI runs only for `main`: on push, or by hand from the Actions tab ("Run workflow").
 
 ## Analytics (optional)
 
