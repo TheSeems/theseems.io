@@ -4,7 +4,7 @@ Personal site: **Svelte 5**, **Vite 6**, **Tailwind CSS 4** via **`@tailwindcss/
 
 ## Scripts
 
-Uses [pnpm](https://pnpm.io) (version pinned in `package.json`); run `pnpm install` first.
+Uses [pnpm](https://pnpm.io).
 
 - `pnpm dev` — dev server
 - `pnpm build` — production build
