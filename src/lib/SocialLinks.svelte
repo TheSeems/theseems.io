@@ -8,8 +8,9 @@
 
   let { class: className = "", placement = "unknown" } = $props();
 
+  /** Secondary to the solid button beside them (View CV, the email): smaller, quieter, no shadow. */
   const linkClass =
-    "flex h-12 w-12 items-center justify-center rounded-full border border-zinc-200/80 bg-white/70 text-zinc-700 shadow-sm backdrop-blur transition hover:border-zinc-300 hover:text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300 dark:hover:border-zinc-700 dark:hover:text-white";
+    "flex h-11 w-11 items-center justify-center rounded-full border border-zinc-200/80 bg-white/60 text-zinc-600 backdrop-blur transition hover:border-zinc-300 hover:text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-400 dark:hover:border-zinc-700 dark:hover:text-white";
 
   /** @param {string} platform */
   function socialClick(platform) {
@@ -27,7 +28,7 @@
     data-umami-event="social_click"
     onclick={() => socialClick("github")}
   >
-    <IconGithub class="h-6 w-6" aria-hidden="true" />
+    <IconGithub class="h-5 w-5" aria-hidden="true" />
   </a>
   <a
     class={linkClass}
@@ -38,7 +39,7 @@
     data-umami-event="social_click"
     onclick={() => socialClick("linkedin")}
   >
-    <IconLinkedin class="h-6 w-6" aria-hidden="true" />
+    <IconLinkedin class="h-5 w-5" aria-hidden="true" />
   </a>
   <a
     class={linkClass}
@@ -49,7 +50,7 @@
     data-umami-event="social_click"
     onclick={() => socialClick("telegram")}
   >
-    <IconTelegram class="h-6 w-6" aria-hidden="true" />
+    <IconTelegram class="h-5 w-5" aria-hidden="true" />
   </a>
   {#if placement === "hero"}
       <a
@@ -59,7 +60,7 @@
         data-umami-event="social_click"
         onclick={() => socialClick("email")}
       >
-        <IconMail class="h-6 w-6" aria-hidden="true" />
+        <IconMail class="h-5 w-5" aria-hidden="true" />
       </a>
   {/if}
 </nav>

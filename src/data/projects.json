@@ -1,20 +1,24 @@
 [
   {
     "pinned": true,
+    "featured": true,
+    "accent": "#e8306a",
     "year": 2026,
     "title": "Flink Fuchsia",
     "url": "https://github.com/theseems/flink-fuchsia",
     "tags": ["Svelte", "Java", "Apache Flink"],
-    "description": "The Apache Flink dashboard, reskinned and extensible: a Svelte UI with live job-graph load coloring, plus pluggable authorization, UI sections, and endpoints from drop-in JARs — no Flink fork or sidecar.",
+    "description": "A clearer Apache Flink dashboard. Live load coloring on the job graph shows how fast data flows between tasks before you read a single number, and the UI is simpler for people new to Flink. Drop-in JARs add custom backend and frontend logic, with no Flink fork or sidecar.",
     "icon": "flink-fuchsia.png"
   },
   {
     "pinned": true,
+    "featured": true,
+    "accent": "#f0a830",
     "year": 2025,
     "title": "FLYT",
     "url": "https://github.com/ytsaurus/ytsaurus-flyt",
     "tags": ["Python", "Java", "Apache Flink"],
-    "description": "Key contributor to FLYT (Flink over YTsaurus); built the FLYT Python launcher from scratch (CLI, profiles, SquashFS layers, jobshell, CI) and the data-metrics module for timestamp-based sink metrics.",
+    "description": "Apache Flink on YTsaurus. Its connectors and formatters, used by 200+ jobs, read and write YTsaurus tables. Its runtime runs Flink clusters on shared YTsaurus compute, not dedicated machines, and their jobs can write anywhere, ClickHouse included. I built the runtime's Python launcher from scratch and the data-metrics module, and contributed to the connectors.",
     "icon": "flyt.png"
   },
   {
@@ -23,7 +27,7 @@
     "title": "Wili",
     "url": "https://github.com/theseems/Wili",
     "tags": ["Svelte", "Go"],
-    "description": "Full-stack wishlist app with sharing, Telegram Mini App integration, and Yandex ID auth. SvelteKit + TypeScript frontend, Go microservices backend. Deployed to Yandex Cloud via GitHub Actions.",
+    "description": "Full-stack wishlist app with sharing, Telegram integration. SvelteKit + TypeScript frontend, Go microservices backend. Deployed to Yandex Cloud via GitHub Actions.",
     "icon": "wili.png",
     "iconMono": true
   },
@@ -32,8 +36,8 @@
     "year": 2026,
     "title": "Modrinthium",
     "url": "https://github.com/theseems/modrinthium",
-    "tags": ["Vue", "Rust", "Minecraft launcher"],
-    "description": "A de-branded, telemetry-free fork of the Modrinth App: no analytics, ads, or account requirement, plus modpack installs and auto-updates straight from a hosted manifest URL.",
+    "tags": ["Vue", "Rust"],
+    "description": "A de-branded, telemetry-free fork of the Modrinth App (a Minecraft launcher with a rich ecosystem of mods): no analytics, ads, or account requirement, plus modpack installs and auto-updates straight from a hosted manifest URL.",
     "icon": "modrinthium.png"
   },
   {
@@ -41,7 +45,7 @@
     "title": "PacketPray",
     "url": "https://github.com/theseems/PacketPray",
     "tags": ["Java", "Minecraft mod"],
-    "description": "Minecraft mod that mitigates crash scenarios related to network packets; 2.5M+ downloads on CurseForge."
+    "description": "Minecraft mod that mitigates crash scenarios related to network packets; 2.5M+ downloads on CurseForge."
   },
   {
     "year": 2021,
@@ -54,7 +58,7 @@
     "year": 2026,
     "title": "Stoatium",
     "url": "https://github.com/theseems/stoatium",
-    "tags": ["PowerShell", "Electron"],
+    "tags": ["Shell", "Electron"],
     "description": "A debranded, self-host-configurable build of the Stoat chat client — what VSCodium is to VS Code. Maintained as a patch series over pinned upstream tags instead of a vendored fork."
   },
   {

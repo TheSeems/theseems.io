@@ -10,7 +10,9 @@
   import { trackEvent } from "../lib/metrics.js";
 </script>
 
-<Section id="home" class="!pt-1 sm:!pt-6 md:!pt-16">
+<!-- Shorter bottom than other bands: the portrait already runs below the copy, so a full band gap
+     reads as a hole before Work. -->
+<Section id="home" class="!pb-6 !pt-1 sm:!pb-8 sm:!pt-6 md:!pt-16">
   <Container>
     <Columns class="gap-y-7">
       {#snippet aside()}
@@ -21,7 +23,7 @@
           alt="Portrait of Aleksei Akhundov"
           width="280"
           height="350"
-          class="aspect-4/5 w-40 rounded-2xl object-cover object-[center_10%] shadow-[var(--shadow-soft)] ring-1 ring-zinc-200/80 sm:w-48 md:w-full dark:shadow-[var(--shadow-soft-dark)] dark:ring-zinc-700/80"
+          class="aspect-4/5 w-40 rounded-2xl object-cover object-[center_10%] shadow-[var(--shadow-faint)] ring-1 ring-zinc-200/80 sm:w-48 md:w-full dark:shadow-[var(--shadow-soft-dark)] dark:ring-zinc-700/80"
         />
       {/snippet}
 
@@ -61,7 +63,7 @@
           variant="nav"
           target="_blank"
           rel="noreferrer"
-          class="h-12 px-6 text-base"
+          class="h-12 px-7 text-base"
           onclick={() => trackEvent("cv_click", { placement: "hero" })}
         >
           View CV
