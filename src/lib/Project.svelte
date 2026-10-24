@@ -27,7 +27,7 @@
 <!-- The title's link is stretched over the whole entry by its ::after, so the entry clicks as one. -->
 {#snippet heading(/** @type {string} */ size)}
   <h3
-    class="min-w-0 font-semibold leading-snug tracking-tight text-zinc-900 dark:text-zinc-50 {size}"
+    class="min-w-0 font-[650] leading-snug tracking-[-0.01em] text-zinc-900 font-stretch-[108%] dark:text-zinc-50 {size}"
   >
     {#if url}
       <ExternalLink
@@ -100,8 +100,11 @@
           {@render mark("size-8 md:size-6 lg:size-7")}
         </span>
       {/if}
-      {@render heading("text-xl sm:text-2xl")}
-      {@render yearLabel()}
+      <!-- The tile centers on the row; title and year share a baseline, as in the plain entries. -->
+      <div class="flex min-w-0 flex-1 items-baseline gap-3">
+        {@render heading("text-xl sm:text-2xl")}
+        {@render yearLabel()}
+      </div>
     </div>
     <p class="mt-4 text-pretty text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
       {@render children?.()}
