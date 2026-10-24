@@ -62,7 +62,7 @@
 
         <p class="mt-6 text-pretty text-base leading-relaxed text-zinc-600 sm:text-lg dark:text-zinc-400">
           This website uses self-hosted analytics system <ExternalLink href="https://umami.is/">Umami</ExternalLink>
-          to collect anonymous usage data such as page views, button clicks, and referrers.
+          to collect anonymous usage data such as page views, button clicks, referrers, and page load performance.
           No cookies. No cross-site tracking. No advertising profiling or third-party marketing trackers.
         </p>
 
