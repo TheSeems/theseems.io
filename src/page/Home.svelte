@@ -49,11 +49,12 @@
         >
           I work at
           <ExternalLink href="https://www.databricks.com/company/about-us">Databricks</ExternalLink>
-          and studied Artificial Intelligence at
+          and graduated from
           <!-- Keeps the sentence-ending period from wrapping away from the link's icon. -->
           <span class="whitespace-nowrap"
             ><ExternalLink href="https://cs.hse.ru/en">HSE</ExternalLink>.</span
-          > Outside work: open source, homelabs, and distributed systems.
+          ><br />
+          Outside work: open source, homelabs, and distributed systems.
         </p>
         <div class="mt-7 flex flex-wrap items-center justify-center gap-y-4 md:justify-start">
           <Button
