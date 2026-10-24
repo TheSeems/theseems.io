@@ -12,6 +12,12 @@ Uses [pnpm](https://pnpm.io).
 - `pnpm lint` — ESLint (JS + Svelte rules)
 - `pnpm check` — svelte-check (type-checks JS via JSDoc, Svelte diagnostics)
 
+## Deployment
+
+Every push to `main` that passes CI is built into `ghcr.io/theseems/theseems.io` and rolled out
+by Flux. The `CI / deploy` check turns green once theseems.io serves that commit
+(`/version.json`). CI can also be started by hand from the Actions tab ("Run workflow").
+
 ## Analytics (optional)
 
 Production builds can load [Umami](https://umami.is/) when `VITE_UMAMI_URL` and `VITE_UMAMI_WEBSITE_ID` are set (see `.env.example`). Omit them to ship without tracking.
