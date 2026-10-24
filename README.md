@@ -7,6 +7,8 @@ Personal site: **Svelte 5**, **Vite 6**, **Tailwind CSS 4** via **`@tailwindcss/
 - `npm run dev` — dev server
 - `npm run build` — production build
 - `npm run preview` — preview production build
+- `npm run lint` — ESLint (JS + Svelte rules)
+- `npm run check` — svelte-check (type-checks JS via JSDoc, Svelte diagnostics)
 
 ## Analytics (optional)
 

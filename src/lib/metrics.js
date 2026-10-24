@@ -3,10 +3,12 @@ let outboundBound = false;
 /** Both domains serve this site; theseems.io is canonical (see the canonical tag in index.html). */
 const SITE_HOSTS = ["theseems.io", "theseems.ru"];
 
+/** @param {string} hostname */
 function canonicalHost(hostname) {
   return hostname.replace(/^www\./i, "");
 }
 
+/** @param {string} hostname */
 function isOwnHost(hostname) {
   const host = canonicalHost(hostname);
   return host === canonicalHost(window.location.hostname) || SITE_HOSTS.includes(host);
