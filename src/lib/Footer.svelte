@@ -5,7 +5,7 @@
 
   const sourceHref = "https://github.com/TheSeems/theseems.io";
 
-  /** The commit this page was built from, checkable on GitHub. Hidden in local builds. */
+  /** The commit this page was built from, checkable on GitHub; local builds say so instead. */
   const sha = /^[0-9a-f]{40}$/.test(__BUILD_SHA__) ? __BUILD_SHA__ : null;
 
   const linkClass =
@@ -27,15 +27,13 @@
           target="_blank"
           rel="noreferrer noopener"
           class={linkClass}>Source</a
-        >{#if sha}<span class={separatorClass} aria-hidden="true">·</span><span
-            class="whitespace-nowrap"
-            >#<a
-              href="{sourceHref}/commit/{sha}"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="{linkClass} font-mono">{sha.slice(0, 7)}</a
-            ></span
-          >{/if}
+        ><span class={separatorClass} aria-hidden="true">·</span
+        >{#if sha}<a
+            href="{sourceHref}/commit/{sha}"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="{linkClass} font-mono">{sha.slice(0, 7)}</a
+          >{:else}<span class="whitespace-nowrap">local build</span>{/if}
       </p>
     </Columns>
   </Container>
