@@ -1,8 +1,12 @@
 <script>
   import Section from "../lib/ui/Section.svelte";
   import Container from "../lib/ui/Container.svelte";
+  import Columns from "../lib/ui/Columns.svelte";
+  import ExternalLink from "../lib/ui/ExternalLink.svelte";
+  import IconGithub from "../lib/icons/IconGithub.svelte";
   import Project from "../lib/Project.svelte";
   import projects from "../data/projects.json";
+  import { trackEvent } from "../lib/metrics.js";
 
   /** Year = GitHub repo creation of the linked project. */
 
@@ -17,49 +21,36 @@
   const iconUrl = (name) =>
     name ? (iconUrls[`../assets/projects/${name}`] ?? null) : null;
 
-  /** Pinned: order as listed. Rest: newest year first, then title. */
-  const sortedProjects = $derived.by(() => {
-    const indexed = projects.map((p, i) => ({ p, i }));
-    indexed.sort((a, b) => {
-      const ap = a.p.pinned === true;
-      const bp = b.p.pinned === true;
-      if (ap !== bp) return ap ? -1 : 1;
-      if (ap) return a.i - b.i;
-      return b.p.year - a.p.year || a.p.title.localeCompare(b.p.title);
-    });
-    return indexed.map(({ p }) => p);
-  });
+  /** A few picks, not the whole record: the pinned projects, in listed order. The rest are on GitHub. */
+  const picks = projects.filter((p) => p.pinned === true);
 </script>
 
 <Section id="projects">
-  <Container class="flex flex-col items-center">
-    <div class="w-full max-w-3xl text-center">
-      <h2
-        class="mt-4 text-balance text-5xl font-semibold tracking-tight text-zinc-900 sm:text-6xl dark:text-zinc-50"
-      >
-        Projects
-      </h2>
-      <p
-        class="mt-5 text-pretty text-xl font-medium leading-relaxed text-zinc-600 sm:text-2xl dark:text-zinc-400"
-      >
-        Open-source work and side projects
-      </p>
-    </div>
-
-    <div class="mt-12 w-full grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {#each sortedProjects as p (p.title)}
-        <Project
-          url={p.url}
-          title={p.title}
-          tags={p.tags}
-          year={p.year}
-          pinned={p.pinned === true}
-          icon={iconUrl(p.icon)}
-          iconMono={p.iconMono === true}
+  <Container>
+    <Columns title="Side projects">
+      <ul class="space-y-10">
+        {#each picks as p (p.title)}
+          <Project
+            url={p.url}
+            title={p.title}
+            tags={p.tags}
+            year={p.year}
+            icon={iconUrl(p.icon)}
+            iconMono={p.iconMono === true}
+          >
+            {p.description}
+          </Project>
+        {/each}
+      </ul>
+      <p class="mt-10 text-base sm:text-lg">
+        <ExternalLink
+          href="https://github.com/theseems"
+          icon={IconGithub}
+          data-umami-event="social_click"
+          onclick={() => trackEvent("social_click", { platform: "github", placement: "projects" })}
+          >More projects on GitHub</ExternalLink
         >
-          {p.description}
-        </Project>
-      {/each}
-    </div>
+      </p>
+    </Columns>
   </Container>
 </Section>

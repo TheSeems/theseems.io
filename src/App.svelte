@@ -2,6 +2,7 @@
   import Navbar from "./lib/Navbar.svelte";
   import ScrollSpy from "./lib/ScrollSpy.svelte";
   import Home from "./page/Home.svelte";
+  import Work from "./page/Work.svelte";
   import Projects from "./page/Projects.svelte";
   import Contact from "./page/Contact.svelte";
   import Footer from "./lib/Footer.svelte";
@@ -26,6 +27,7 @@
 
   <main id="main-content" class="pb-4 pt-28 sm:pb-6 sm:pt-32">
     <Home />
+    <Work />
     <Projects />
     <Contact />
   </main>

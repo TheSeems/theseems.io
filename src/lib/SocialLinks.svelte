@@ -3,6 +3,7 @@
   import IconLinkedin from "./icons/IconLinkedin.svelte";
   import IconTelegram from "./icons/IconTelegram.svelte";
   import IconMail from "./icons/IconMail.svelte";
+  import { email } from "./contact.js";
   import { trackEvent } from "./metrics.js";
 
   let { class: className = "", placement = "unknown" } = $props();
@@ -53,7 +54,7 @@
   {#if placement === "hero"}
       <a
         class={linkClass}
-        href="mailto:me@theseems.io"
+        href="mailto:{email}"
         aria-label="Email"
         data-umami-event="social_click"
         onclick={() => socialClick("email")}

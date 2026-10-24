@@ -5,45 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Alexey Akhundov — Software Engineer at Databricks. Data platform, backend, and distributed systems. Portfolio and open-source projects (TheSeems)."
+      content="Aleksei Akhundov — Software Engineer on the indexing team at Databricks, based in Belgrade, Serbia. Data systems, data platforms, and backend. Portfolio and open-source projects (TheSeems)."
     />
     <link rel="canonical" href="https://theseems.io/" />
     <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
-    <meta name="author" content="Alexey Akhundov" />
+    <meta name="author" content="Aleksei Akhundov" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="TheSeems" />
     <meta property="og:url" content="https://theseems.io/" />
-    <meta property="og:title" content="Alexey Akhundov · TheSeems" />
+    <meta property="og:title" content="Aleksei Akhundov · TheSeems" />
     <meta
       property="og:description"
-      content="Software Engineer at Databricks. Data platform, backend, and distributed systems. Portfolio and open-source projects."
+      content="Software Engineer on the indexing team at Databricks. Data systems, data platforms, and backend. Portfolio and open-source projects."
     />
     <meta property="og:locale" content="en_US" />
     <meta property="og:image" content="https://theseems.io/me.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:image" content="https://theseems.io/me.png" />
-    <meta name="twitter:title" content="Alexey Akhundov · TheSeems" />
+    <meta name="twitter:title" content="Aleksei Akhundov · TheSeems" />
     <meta
       name="twitter:description"
-      content="Software Engineer at Databricks. Data platform, backend, and distributed systems."
+      content="Software Engineer on the indexing team at Databricks. Data systems, data platforms, and backend."
     />
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Alexey Akhundov · TheSeems</title>
+    <title>Aleksei Akhundov · TheSeems</title>
+
+    <!-- Apply the theme before first paint so dark-mode visitors never see a light flash.
+         Mirrors readStored/systemTheme in src/lib/theme.svelte.js, which takes over after load. -->
+    <script>
+      (function () {
+        var saved = null;
+        try {
+          saved = localStorage.getItem("theseems-theme");
+        } catch (e) {}
+        var dark =
+          saved === "dark" ||
+          (saved !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        if (dark) document.documentElement.classList.add("dark");
+      })();
+    </script>
   </head>
   <body>
+    <!-- Without JavaScript the app can't render; keep the essentials (and the CV) reachable.
+         Also what non-rendering crawlers and sourcing tools read. Mirrors src/page/Home.svelte.
+         Sits before #app, whose min-height would otherwise push it below the fold. -->
+    <noscript>
+      <main class="mx-auto max-w-xl px-5 py-24">
+        <h1 class="text-4xl font-semibold tracking-tight text-zinc-900">Aleksei Akhundov</h1>
+        <p class="mt-3 text-lg font-medium text-zinc-600">Software Engineer · Data Systems · Backend</p>
+        <p class="mt-1.5 text-zinc-600">
+          Belgrade, Serbia <span class="ml-3 font-mono tracking-tight">@theseems</span>
+        </p>
+        <p class="mt-5 leading-relaxed text-zinc-700">
+          I'm on the indexing team at
+          <a class="font-medium text-sky-700 underline" href="https://www.databricks.com/company/about-us">Databricks</a>,
+          making queries fast. Before that: data platforms and backend systems. Graduated from
+          <a class="font-medium text-sky-700 underline" href="https://cs.hse.ru/en">HSE</a>.
+        </p>
+        <p class="mt-2 leading-relaxed text-zinc-700">
+          Outside work: open source, homelabs, and distributed systems.
+        </p>
+        <p class="mt-5 leading-relaxed text-zinc-700">
+          <a class="font-medium text-sky-700 underline" href="https://theseems.io/cv">View CV</a> ·
+          <a class="font-medium text-sky-700 underline" href="https://github.com/theseems">GitHub</a> ·
+          <a class="font-medium text-sky-700 underline" href="https://www.linkedin.com/in/theseems">LinkedIn</a> ·
+          <a class="font-medium text-sky-700 underline" href="https://t.me/theseems">Telegram</a> ·
+          <a class="font-medium text-sky-700 underline" href="mailto:me@theseems.io">me@theseems.io</a>
+        </p>
+      </main>
+    </noscript>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
