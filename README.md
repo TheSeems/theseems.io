@@ -4,9 +4,13 @@ Personal site: **Svelte 5**, **Vite 6**, **Tailwind CSS 4** via **`@tailwindcss/
 
 ## Scripts
 
-- `npm run dev` — dev server
-- `npm run build` — production build
-- `npm run preview` — preview production build
+Uses [pnpm](https://pnpm.io).
+
+- `pnpm dev` — dev server
+- `pnpm build` — production build
+- `pnpm preview` — preview production build
+- `pnpm lint` — ESLint (JS + Svelte rules)
+- `pnpm check` — svelte-check (type-checks JS via JSDoc, Svelte diagnostics)
 
 ## Analytics (optional)
 

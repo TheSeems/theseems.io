@@ -19,15 +19,18 @@
     trackEvent("nav_click", { section: "home" });
   }
 
+  /** @param {string} sectionId */
   function trackMobileNav(sectionId) {
     trackEvent("nav_click", { section: sectionId });
     closeMenu();
   }
 
+  /** @param {string} placement */
   function trackCv(placement) {
     trackEvent("cv_click", { placement });
   }
 
+  /** @param {KeyboardEvent} e */
   function onKeydown(e) {
     if (e.key === "Escape") menuOpen = false;
   }

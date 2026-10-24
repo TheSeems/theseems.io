@@ -10,6 +10,7 @@
   const base =
     "inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium tracking-tight transition-[transform,box-shadow,background-color,color,border-color] duration-200 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500/80";
 
+  /** @type {Record<string, string>} */
   const variants = {
     primary:
       "border border-zinc-200/80 bg-white/70 text-zinc-900 shadow-[var(--shadow-soft)] backdrop-blur-md hover:bg-white dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-100 dark:shadow-[var(--shadow-soft-dark)] dark:hover:bg-zinc-900/80",

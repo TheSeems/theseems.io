@@ -10,6 +10,7 @@
   const linkClass =
     "flex h-12 w-12 items-center justify-center rounded-full border border-zinc-200/80 bg-white/70 text-zinc-700 shadow-sm backdrop-blur transition hover:border-zinc-300 hover:text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300 dark:hover:border-zinc-700 dark:hover:text-white";
 
+  /** @param {string} platform */
   function socialClick(platform) {
     trackEvent("social_click", { platform, placement });
   }

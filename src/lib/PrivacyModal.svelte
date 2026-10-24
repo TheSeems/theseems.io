@@ -4,6 +4,7 @@
   import { trackEvent } from "./metrics.js";
 
   let open = $state(false);
+  /** @type {HTMLDivElement | null} */
   let panel = $state(null);
 
   function sync() {
@@ -26,7 +27,6 @@
 </script>
 
 {#if open}
-  <!-- svelte-ignore a11y_no_static_element_interactions -->
   <div
     class="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/30 backdrop-blur-sm dark:bg-black/50"
     onclick={(e) => { if (e.target === e.currentTarget) close(); }}

@@ -8,6 +8,7 @@
   const email = "me@theseems.io";
   /** idle | copied | failed — `navigator.clipboard` is absent on http: and can reject. */
   let status = $state("idle");
+  /** @type {ReturnType<typeof setTimeout> | undefined} */
   let timeout;
 
   async function copyEmail() {

@@ -5,6 +5,7 @@
   import { trackEvent } from "./metrics.js";
 
   /** @type {Set<string>} */
+  // eslint-disable-next-line svelte/prefer-svelte-reactivity -- bookkeeping for analytics, never rendered
   const viewedSections = new Set();
 
   function getHeaderOffset() {
@@ -16,7 +17,7 @@
   function updateActive() {
     const sections = sectionIds
       .map((id) => document.getElementById(id))
-      .filter(Boolean);
+      .filter((el) => el !== null);
     if (sections.length === 0) return;
 
     const atPageBottom =
