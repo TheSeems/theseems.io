@@ -71,7 +71,7 @@
     <article aria-labelledby="privacy-heading">
       <h2
         id="privacy-heading"
-        class="text-balance text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50"
+        class="text-balance text-2xl font-[650] tracking-[-0.015em] text-zinc-900 font-stretch-expanded dark:text-zinc-50"
       >
         Privacy
       </h2>

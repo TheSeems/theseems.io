@@ -50,7 +50,8 @@
         closeMenu();
       }}
     >
-      <span class="text-base font-semibold tracking-tight text-zinc-900 dark:text-zinc-50"
+      <span
+        class="text-base font-bold tracking-[-0.02em] text-zinc-900 font-stretch-expanded dark:text-zinc-50"
         >Aleksei Akhundov</span
       >
     </a>

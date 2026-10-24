@@ -29,7 +29,7 @@
 
       <!-- trim-cap: the name's capitals start exactly at the portrait's top edge. -->
       <h1
-        class="text-balance text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl md:trim-cap lg:text-6xl dark:text-zinc-50"
+        class="text-balance text-4xl font-bold tracking-[-0.02em] text-zinc-900 font-stretch-expanded sm:text-5xl md:trim-cap lg:text-6xl dark:text-zinc-50"
       >
         Aleksei Akhundov
       </h1>
@@ -43,7 +43,7 @@
         class="mt-1.5 flex flex-wrap items-baseline gap-x-4 text-base text-zinc-600 sm:text-lg dark:text-zinc-400"
       >
         <span>Belgrade, Serbia</span>
-        <span class="font-mono text-sm tracking-tight sm:text-base">@theseems</span>
+        <span class="font-mono">@theseems</span>
       </p>
       <!-- Work and study run as one paragraph; life outside work gets its own. -->
       <div

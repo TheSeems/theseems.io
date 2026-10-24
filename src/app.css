@@ -7,8 +7,11 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+  /* Archivo reads at normal width; names and headings set it expanded (font-stretch-expanded). */
+  --font-sans: "Archivo Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
+  /* Chivo Mono for data (years, stack, handle, address): Archivo's foundry, the same grotesque build. */
+  --font-mono: "Chivo Mono Variable", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --radius-card: 1rem;
   --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 12px 40px rgb(15 23 42 / 0.06);
   --shadow-soft-dark: 0 1px 2px rgb(0 0 0 / 0.45), 0 12px 40px rgb(0 0 0 / 0.35);
@@ -17,9 +20,9 @@
 }
 
 /* Pulls an element up by the space above its first line's capitals, so the top of its box is the
-   cap height and it top-aligns with a neighbor (Inter: ascent 0.96875em, descent 0.2412em, caps 0.7275em). */
+   cap height and it top-aligns with a neighbor (Archivo: ascent 0.878em, descent 0.21em, caps 0.6875em). */
 @utility trim-cap {
-  margin-top: calc((1.2099em - 1lh) / 2 - 0.2412em);
+  margin-top: calc((1.088em - 1lh) / 2 - 0.1905em);
 }
 
 @layer base {
@@ -45,7 +48,6 @@
   ::selection {
     @apply bg-sky-500/20 text-zinc-900 dark:bg-sky-400/25 dark:text-zinc-50;
   }
-
   #app {
     min-height: 100dvh;
   }

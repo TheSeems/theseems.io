@@ -3,7 +3,7 @@
    * The page grid. From md: a label column as wide as the hero portrait, then the main column, so
    * the hero text, every section and the footer start on the same edge. Below md they stack.
    * `title` renders the section heading in the label column; `aside` replaces it (the portrait).
-   * Columns are top-aligned: with Inter, a heading's capitals then sit within about a pixel of the
+   * Columns are top-aligned: with Archivo, a heading's capitals then sit within about a pixel of the
    * first line beside it. When a framed box comes first instead, set `alignTitleToBox` so the
    * capitals start at the box's top edge, as the hero name does at the portrait's.
    */
@@ -24,7 +24,7 @@
       {@render aside()}
     {:else if title}
       <h2
-        class="text-balance text-2xl font-semibold tracking-tight text-zinc-900 lg:text-3xl dark:text-zinc-50 {alignTitleToBox
+        class="text-balance text-2xl font-[650] tracking-[-0.015em] text-zinc-900 font-stretch-expanded lg:text-3xl dark:text-zinc-50 {alignTitleToBox
           ? 'md:trim-cap'
           : ''}"
       >
