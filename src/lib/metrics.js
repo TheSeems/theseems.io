@@ -51,6 +51,8 @@ export function initMetrics() {
   script.src = `${base}/script.js`;
   script.dataset.websiteId = websiteId;
   script.dataset.domains = SITE_HOSTS.flatMap((h) => [h, `www.${h}`]).join(",");
+  // Web Vitals (LCP, INP, CLS, FCP, TTFB) for the Performance tab; sent via the same collect endpoint
+  script.dataset.performance = "true";
   document.head.appendChild(script);
 }
 
