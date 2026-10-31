@@ -10,4 +10,8 @@ ARG GIT_SHA=dev
 RUN pnpm build && printf '{"sha":"%s"}\n' "$GIT_SHA" > dist/version.json
 
 FROM nginxinc/nginx-unprivileged:1.30.6-alpine
+# Cache headers for Cloudflare and browsers
+COPY nginx-site.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /src/dist /usr/share/nginx/html
+# A broken config fails the build, not the rollout
+RUN nginx -t
