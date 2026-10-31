@@ -92,3 +92,21 @@ jobs:
           done
           echo "::error::theseems.io did not start serving $GITHUB_SHA within the timeout"
           exit 1
+
+      # Cloudflare keeps the page for a day (nginx-site.conf), so clear it once the new build is live.
+      # Waits a bit first: during the rollout the old pod can still answer for a few seconds, and a
+      # page it served then would stick for the whole day.
+      - name: Clear the cached page at Cloudflare
+        env:
+          CLOUDFLARE_PURGE_TOKEN: ${{ secrets.CLOUDFLARE_PURGE_TOKEN }}
+          ZONE_ID: b14adfb797d37f09d10262a81f79ecee  # theseems.io
+        run: |
+          if [ -z "$CLOUDFLARE_PURGE_TOKEN" ]; then
+            echo "::error::CLOUDFLARE_PURGE_TOKEN isn't set, so Cloudflare keeps serving the old page for up to a day"
+            exit 1
+          fi
+          sleep 30
+          curl -fsS -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/purge_cache" \
+            -H "Authorization: Bearer $CLOUDFLARE_PURGE_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data '{"tags":["page"]}' | jq -e .success
