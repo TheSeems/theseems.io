@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- One <url> per public page. Sections (#work, #projects) are fragments of / and don't get entries.
+     /cv is the PDF linked from the nav; it isn't built from this repo. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://theseems.io/</loc>
+  </url>
+  <url>
+    <loc>https://theseems.io/cv</loc>
+  </url>
+</urlset>

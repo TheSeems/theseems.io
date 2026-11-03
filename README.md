@@ -21,6 +21,12 @@ by Flux. The `CI / deploy` check turns green once theseems.io serves that commit
 Cache headers live in `nginx-site.conf`. Anything under `/assets/` has a content hash in its name, so
 browsers and Cloudflare keep it for a year. The page itself gets checked on every visit.
 
+## Markdown for agents
+
+`/` answers `Accept: text/markdown` with the page as Markdown, built by `src/markdown.js`. Projects
+come from `projects.json`. The rest of the text is a hand-made copy, so a change in `src/page/` needs
+the same change there.
+
 ## Analytics (optional)
 
 Production builds can load [Umami](https://umami.is/) when `VITE_UMAMI_URL` and `VITE_UMAMI_WEBSITE_ID` are set (see `.env.example`). Omit them to ship without tracking.
